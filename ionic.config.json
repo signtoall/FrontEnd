@@ -1,0 +1,7 @@
+{
+  "name": "signtoallApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
