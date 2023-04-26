@@ -1,0 +1,117 @@
+ion-content{
+    --background: rgb(166,255,179);
+    --background: linear-gradient(90deg, rgba(166,255,179,1) 0%, rgba(255,245,163,1) 67%);
+  }
+  
+  ion-toolbar{
+    ---background: rgb(166,255,179);
+    --background: linear-gradient(90deg, rgba(166,255,179,1) 0%, rgba(255,245,163,1) 67%);
+  }
+  
+  ion-item{
+    --border-radius: 12px;
+    padding: 0 45px;
+    width:auto;
+    height: 55px;
+    --background: #0f8bfd14;
+    margin-bottom: 10px;
+    position: static;
+  }
+  
+  ion-input{
+    color: #000;
+  }
+  
+  ion-button{
+    margin-top: 20px;
+    padding: 0 45px;
+    --border-radius: 10px;
+    width:auto;
+    height: 40px;
+    --background: #0F8BFD;
+    margin-bottom: 10px;
+    position: static;
+  }
+  
+  ion-img {
+    width: 50%;
+    margin: auto;
+  }
+  
+  .by{
+    color: #000;
+    text-align: center;
+    margin: 0;
+    font-size: small;
+  }
+  
+  .exception-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .exception-body .exception-footer {
+    align-items: center;
+    display: flex;
+  }
+  
+  .imgFooter{
+    width:100px;
+    height: auto;
+    margin-left: 15px;
+  }
+  
+  .fullheight {
+    height: 100%;
+  }
+  
+  .xc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .vcs {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hcs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    ion-content{
+        --background: rgb(166,255,179);
+        --background: linear-gradient(90deg, rgba(166,255,179,1) 0%, rgba(255,245,163,1) 67%);
+    }
+    
+    ion-toolbar{
+        --background: rgb(166,255,179);
+        --background: linear-gradient(90deg, rgba(166,255,179,1) 0%, rgba(255,245,163,1) 67%);
+    }
+  
+    ion-item{
+        --border-radius: 12px;
+        padding: 0 45px;
+        width:auto;
+        height: 55px;
+        --background: #0f8bfd14;
+        margin-bottom: 10px;
+        position: static;
+    }
+    
+    ion-input{
+        color: #000;
+    }
+  
+    ion-select {
+      color: #000;
+    }
+  
+  }
+  

@@ -1,0 +1,48 @@
+<ion-content>
+  <div class="fullheight xc">
+      <div class="vcs">
+        <ion-img src="assets/images/Registro.png"> </ion-img>
+          <form  [formGroup]="form" style="margin-top: 1rem;">
+      
+            <ion-item>
+              <ion-input   formControlName="username" type="text"  placeholder="Nombre"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input   formControlName="username" type="text"  placeholder="Apellido"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input   formControlName="username" type="text"  placeholder="Documento"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-select aria-label="fruit" placeholder="Género">
+              <ion-select-option value="apples">Femenino</ion-select-option>
+              <ion-select-option value="oranges">Masculino</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+            <ion-item>
+                <ion-input   formControlName="username" type="text"  placeholder="Correo"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input   formControlName="password" type="password"  placeholder="Contraseña"></ion-input>
+          </ion-item>
+            
+            <ion-button expand="block" shape="round" [disabled]="!form.valid" (click)="signup()">
+              <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
+                Registrarse
+            </ion-button>
+              
+            </form>
+        </div>
+    </div>
+  </ion-content>
+  
+  <ion-footer  class="ion-no-border" >
+    <ion-toolbar>
+      
+    </ion-toolbar>
+  </ion-footer>
