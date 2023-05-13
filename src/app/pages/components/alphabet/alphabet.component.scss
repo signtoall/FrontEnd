@@ -1,0 +1,27 @@
+ion-content{
+    --background: rgb(238,255,166);
+    --background: linear-gradient(53deg, rgba(238,255,166,1) 48%, rgba(163,255,198,1) 78%);
+  }
+  
+  ion-toolbar{
+    --background: rgba(238,255,166,1) ;
+  }
+
+  ion-slides {
+    height: 100%;
+  }
+
+  ion-item{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    --border-radius: 5px;
+    --border-color:#ddd;
+  }
+
+  .by{
+    color: #000;
+    text-align: center;
+    margin: 0;
+    font-size: small;
+  }

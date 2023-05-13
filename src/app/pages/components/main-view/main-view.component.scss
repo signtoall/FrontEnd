@@ -1,0 +1,126 @@
+ion-content{
+    --background: rgb(145,255,252);
+    --background: radial-gradient(circle, rgba(145,255,252,1) 0%, rgba(213,171,255,1) 77%);
+  }
+  
+  ion-toolbar{
+    --background: rgba(213,171,255,1);
+  }
+  
+  ion-title{
+    color: #000;
+    text-align: center;
+    font-weight: bold;
+  }
+  #container {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+  
+  .centerText{
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+  ion-item{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    --border-radius: 5px;
+    --border-color:#ddd;
+  }
+  ion-card-header{
+    background-color: #fff;
+  }
+  
+  .closeSession{
+    --ion-background-color:  rgb(255, 223, 223); 
+  }
+  
+  .profileSession{
+    --ion-background-color:  rgb(223, 255, 255); 
+  
+  }
+  
+  .cardSession{
+    --ion-background-color:  #d1e6fb2e;
+  
+  }
+  
+  .btn {
+    width: 90%;
+    border: 2px solid black;
+    background-color: white;
+    color: black;  
+    cursor: pointer;
+  }
+  
+  /* Blue */
+  .info {
+    border-color: #2196F3;
+    color: dodgerblue;
+  }
+  
+  .info:hover {
+    background: #0f8bfd73;
+    color: white;
+  }
+  
+
+  
+  .imgFooter{
+    width:100px;
+    height: auto;
+    margin-left: 15px;
+  }
+  
+  .itemImg{
+    --ion-background-color:  #ffff !important;
+    margin-top: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    --border-radius: 20px !important;
+    //width: 100px;
+    height: auto;
+    --border-color: transparent !important;
+  }
+  
+ 
+  .pSinDeuda{
+    color: #b100dd;
+  }
+  
+  
+  
+  @media (prefers-color-scheme: dark) {
+    ion-content{
+        --background: rgb(145,255,252);
+        --background: radial-gradient(circle, rgba(145,255,252,1) 0%, rgba(213,171,255,1) 77%);
+    }
+    
+    ion-toolbar{
+        --background: rgba(213,171,255,1);
+    }
+  
+    ion-label{
+      color: #000;
+    }
+    
+    ion-input{
+        color: #000;
+    }
+  
+    ion-title{
+      color: #000;
+      text-align: center;
+      font-weight: bold;
+    }
+    
+  }
+  
+  @media only screen and (max-width: 860px) {
+    .itemImg {
+        width: 100px;
+    }
+  }

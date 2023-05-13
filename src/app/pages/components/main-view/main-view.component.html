@@ -1,0 +1,100 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-capitalize">Bienvenid@</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" class="ion-text-capitalize">Bienvenid@</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-item (click)="logout()" class="closeSession">
+      <ion-icon name="log-out-outline" class="ion-padding" color="#000"></ion-icon>
+      <ion-label ><h2> <strong> Cerrar Sesión </strong>  </h2> </ion-label>
+      <ion-button expand="block" fill="clear" shape="round" >
+        <ion-icon  name="arrow-forward-outline" color="#000" ></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item class="profileSession">
+      <ion-icon name="person-outline" class="ion-padding" color="#000"></ion-icon>
+      <ion-label ><h2> <strong> Información Personal </strong>  </h2> </ion-label>
+      <ion-button expand="block" fill="clear" shape="round" >
+        <ion-icon  name="arrow-forward-outline" color="#000"></ion-icon>
+      </ion-button>
+    </ion-item>
+  
+
+  
+    <ion-label >
+      <h2 class="centerText"> <strong> Es bueno tenerte el día de hoy:</strong> </h2> 
+      <p>Selecciona una opción.</p>
+    </ion-label>
+
+    <div id="myDiv">
+      <div>
+        <ion-item [routerLink]="['/alphabet']" class="cardSession">
+              <ion-item class="itemImg" >
+                <ion-img class="img" src="assets/images/abecedario.png" ></ion-img>
+              </ion-item>
+              <ion-label >
+                <h2> <strong> &nbsp; Abecedario </strong>  </h2> 
+                <h3> &nbsp; <ion-icon name="rocket"></ion-icon> Empecemos</h3>
+                <p class="pSinDeuda" > &nbsp; <ion-icon name="footsteps"></ion-icon> Aprende LSC</p>
+              </ion-label>
+              <ion-button expand="block" fill="clear" shape="round" >
+                <ion-icon  name="arrow-forward-outline" color="#000"></ion-icon>
+              </ion-button>
+        </ion-item>
+      </div>
+
+      <div>
+        <ion-item [routerLink]="['/activities']" class="cardSession">
+              <ion-item class="itemImg" >
+                <ion-img class="img" src="assets/images/puzzle.png" ></ion-img>
+              </ion-item>
+              <ion-label >
+                <h2> <strong> &nbsp; Actividades </strong>  </h2> 
+                <h3> &nbsp; <ion-icon name="rocket"></ion-icon> Empecemos</h3>
+                <p class="pSinDeuda" > &nbsp; <ion-icon name="game-controller"></ion-icon> Aprende LSC</p>
+              </ion-label>
+              <ion-button expand="block" fill="clear" shape="round" >
+                <ion-icon  name="arrow-forward-outline" color="#000"></ion-icon>
+              </ion-button>
+        </ion-item>
+      </div>
+
+      <div>
+        <ion-item [routerLink]="['/about-us']" class="cardSession">
+              <ion-item class="itemImg" >
+                <ion-img class="img" src="assets/images/Logo.png" ></ion-img>
+              </ion-item>
+              <ion-label >
+                <h2> <strong> &nbsp; Sign to all </strong>  </h2> 
+                <h3> &nbsp; <ion-icon name="rocket"></ion-icon> Conócenos</h3>
+                <p class="pSinDeuda" > &nbsp; <ion-icon name="planet"></ion-icon> ...</p>
+              </ion-label>
+              <ion-button expand="block" fill="clear" shape="round" >
+                <ion-icon  name="arrow-forward-outline" color="#000"></ion-icon>
+              </ion-button>
+        </ion-item>
+      </div>
+
+    </div>
+    
+  </div>
+  
+</ion-content>
+
+<ion-footer  class="ion-no-border" >
+  <ion-toolbar>
+    
+  </ion-toolbar>
+</ion-footer>
+
+

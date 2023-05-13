@@ -18,6 +18,8 @@ export class LoginComponent  implements OnInit {
 
   ngOnInit() {}
 
-  login(){}
+  login(){
+    this.nvCtrl.navigateRoot('/main-view', { animated: true });
+  }
 
 }

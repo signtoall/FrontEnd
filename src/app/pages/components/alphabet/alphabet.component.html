@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/main-view"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize">LSC</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-slides pager>
+    <ion-slide *ngFor="let image of letters">
+      <div class="slide">
+        <img [src]="image.Letra" />
+        <h1 style="color:#3171e0;"><b>{{image.label}}</b> </h1>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <h3 class="by"> Desliza para ver el contenido. </h3>   
+  </ion-toolbar>
+</ion-footer>
