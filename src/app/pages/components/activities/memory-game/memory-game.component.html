@@ -13,8 +13,18 @@
         <h2>Encuentra las parejas</h2>
     </div>
 
+    <!--pantalla de carga-->
+    <div align="center" *ngIf="!startGame">
+        <br>
+        <p>Encuentra las parejas para ganar</p>
+        <p>Tienes un total de <b>{{userLife}}</b> oportunidades.</p>
+        <br>
+        <h4>Empieza en <span style="color:#CC0000;
+        font-size: 24px;">{{countDown}}</span>... </h4>
+    </div>
     <!-- Actual cards display -->
-    <ion-row align-items-center text-center size="8">
+    <ion-row align-items-center text-center size="8" *ngIf="startGame &&
+    gameState == 'Iniciando'">
 
         <ion-col align-self-center size="3" *ngFor="let c of cardsArray; 
             let i = index">
@@ -36,20 +46,72 @@
              style="width:80px; height:80px; border: solid 2px #000; border-radius: 12px;">
 
             <!--Ocultar la tarjeta-->
-            <img src="/assets/juegos/Hecho.png"
+            <!-- <img src="/assets/juegos/Hecho.png"
             *ngIf="c.val == -1"
-            style="width:80px; height:80px; border: solid 2px #000; border-radius: 12px;">
+            style="width:80px; height:80px; border: solid 2px #000; border-radius: 12px;"> -->
 
-            <!-- <img
+            <img
             *ngIf="c.val == -1"
-            style="width:80px; height:80px; border: solid 2px #000; border-radius: 12px;visibility: hidden;"> -->
+            style="width:80px; height:80px; border: solid 2px #000; border-radius: 12px;visibility: hidden;">
 
         </ion-col>
 
     </ion-row>
 
-    <div align="center">
-        <h5>Vidas:{{userLife}}</h5>
+    <div align="center" *ngIf="startGame && gameState == 'Iniciando'">
+        <br>
+        <ion-row>
+            <ion-col col-9>
+                <p>Tienes <span style="color:
+                #00CC00; font-size: 24px;">
+                {{userLife}} 
+                </span> intentos...</p>
+
+            </ion-col>
+            <ion-col>
+                <p><span style="color:
+                    #CC0000; font-size: 24px;">
+                    {{shownTime}} 
+                    </span>
+                </p>
+            </ion-col>
+        </ion-row>
+    </div>
+
+     <!--Show lose screen-->
+     <div *ngIf="gameState == 'Ganaste'" align="center">
+        <br>
+        <p><span style="color:
+            #00CC00; font-size: 24px;">
+            GANASTE
+            </span>
+        </p>
+        <p>¿Deseas intentarlo nuevamente?</p>
+        <br>
+        <ion-button size="large" color="danger"
+            (click)="restartGame()">
+            <ion-icon name="repeat">
+                &nbsp; &nbsp; Jugar nuevamente
+            </ion-icon>
+        </ion-button>
+    </div>
+
+    <!--Show lose screen-->
+    <div *ngIf="gameState == 'Perdiste'" align="center">
+        <br>
+        <p><span style="color:
+            #CC0000; font-size: 24px;">
+            PERDISTE
+            </span>
+        </p>
+        <p>¿Deseas intentarlo nuevamente?</p>
+        <br>
+        <ion-button size="large" color="danger"
+            (click)="restartGame()">
+            <ion-icon name="repeat">
+                &nbsp; &nbsp; Intentar nuevamente
+            </ion-icon>
+        </ion-button>
     </div>
 
 </ion-content>
