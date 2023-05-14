@@ -10,11 +10,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlphabetComponent } from './components/alphabet/alphabet.component';
 import { MainViewComponent } from './components/main-view/main-view.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 
 @NgModule({
   declarations: [AccessPermissionsComponent, LoginComponent, SignUpComponent, AlphabetComponent,
-  MainViewComponent, AboutUsComponent],
+  MainViewComponent, AboutUsComponent, PerfilComponent],
   imports: [
     CommonModule,
     SignRoutingModule,

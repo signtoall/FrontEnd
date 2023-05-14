@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/activities"></ion-back-button>
+      </ion-buttons>
+      <ion-title class="ion-text-capitalize">Juega</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+
+    <div align="center">
+        <h2>Encuentra las parejas</h2>
+    </div>
+
+    <!-- Actual cards display -->
+    <ion-row align-items-center text-center size="8">
+
+        <ion-col align-self-center size="3" *ngFor="let c of cardsArray; 
+            let i = index">
+
+            <!--Mostrar la tarjeta-->
+            <img src="/assets/juegos/pregunta.png"
+                *ngIf="c.pos != selectCard1pos && c.pos != selectCard2pos && c.val > -1"
+                (click)="selectCard(c.pos, c.val, i)"
+                style="width:80px; height:80px; border: solid 2px #000; border-radius: 12px;">
+
+            <!--mostrar la carta 1 seleccionada-->
+            <img [src]="imageDir + images[c.val] + '.png'" 
+                *ngIf="c.pos == selectCard1pos && c.val > -1"
+                style="width:80px; height:80px; border: solid 2px #000; border-radius: 12px;">
+
+             <!--mostrar la carta 2 seleccionada-->
+             <img [src]="imageDir + images[c.val] + '.png'" 
+             *ngIf="c.pos == selectCard2pos && c.val > -1"
+             style="width:80px; height:80px; border: solid 2px #000; border-radius: 12px;">
+
+            <!--Ocultar la tarjeta-->
+            <img src="/assets/juegos/Hecho.png"
+            *ngIf="c.val == -1"
+            style="width:80px; height:80px; border: solid 2px #000; border-radius: 12px;">
+
+            <!-- <img
+            *ngIf="c.val == -1"
+            style="width:80px; height:80px; border: solid 2px #000; border-radius: 12px;visibility: hidden;"> -->
+
+        </ion-col>
+
+    </ion-row>
+
+    <div align="center">
+        <h5>Vidas:{{userLife}}</h5>
+    </div>
+
+</ion-content>

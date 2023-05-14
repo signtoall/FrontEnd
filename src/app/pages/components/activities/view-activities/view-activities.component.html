@@ -1,3 +1,54 @@
-<p>
-  view-activities works!
-</p>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/main-view"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize">Actividades</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" class="ion-text-capitalize">Actividades</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+  
+    <ion-label >
+      <h2 class="centerText"> <strong> Elige una actividad</strong> </h2> 
+    </ion-label>
+
+    <div id="myDiv">
+      <div *ngFor="let act of activities">
+        <ion-item [routerLink]="['/activities'+ act.url]" class="cardSession">
+              <ion-item class="itemImg" >
+                <ion-img class="img" [src]="act.image"></ion-img>
+              </ion-item>
+              <ion-label >
+                <h2> <strong> &nbsp; {{act.name}} </strong>  </h2> 
+                <h3> &nbsp; <ion-icon name="rocket"></ion-icon> Diviértete</h3>
+                <p class="pSinDeuda" > &nbsp; <ion-icon name="footsteps"></ion-icon> Juega</p>
+              </ion-label>
+              <ion-button expand="block" fill="clear" shape="round" >
+                <ion-icon  name="arrow-forward-outline" color="#000"></ion-icon>
+              </ion-button>
+        </ion-item>
+      </div>
+
+
+    </div>
+    
+  </div>
+  
+</ion-content>
+
+<ion-footer  class="ion-no-border" >
+  <ion-toolbar>
+    
+  </ion-toolbar>
+</ion-footer>
+
+

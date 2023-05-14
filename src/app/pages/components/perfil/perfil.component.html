@@ -1,0 +1,67 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/main-view"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize">Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div id="container">
+
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col> 
+          <ion-img src="assets/images/usuario.png" id="logo2"></ion-img>
+
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title style="color: #000;">Bienvenid@</ion-card-title>
+              <ion-card-subtitle style="color: #000;">Sí ves que tus datos personales están incorrectos,
+                No dudes en comunicarte para que se realize el ajuste.</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-list [inset]="true">
+                <ion-item>
+                  <ion-label color="primary">Nombre:<br><ion-label style="color: #000;">P</ion-label></ion-label>          
+                  <ion-icon name="person" color="success"></ion-icon>
+                </ion-item>
+                <ion-item>
+                  <ion-label color="primary">Apellido:<br><ion-label style="color: #000;">P</ion-label></ion-label>
+                  <ion-icon name="person" color="success"></ion-icon>
+                </ion-item>
+                <ion-item>
+                  <ion-label color="primary">Género:<br><ion-label style="color: #000;">F</ion-label></ion-label>     
+                  <ion-icon name="sparkles" color="primary"></ion-icon>
+                </ion-item>
+                <ion-item>
+                  <ion-label color="primary">Fecha de nacimiento:<br><ion-label style="color: #000;">0</ion-label></ion-label>
+                  <ion-icon name="card" color="tertiary"></ion-icon>
+                </ion-item>   
+                <ion-item>
+                  <ion-label color="primary">Documento:<br><ion-label style="color: #000;">0</ion-label></ion-label>
+                  <ion-icon name="card" color="tertiary"></ion-icon>
+                </ion-item>                                           
+                <ion-item>
+                  <ion-label color="primary">Correo:<br><ion-label style="color: #000;">@</ion-label></ion-label>     
+                  <ion-icon name="mail-unread" color="warning"></ion-icon>
+                </ion-item>             
+              </ion-list>
+            </ion-card-content>
+          </ion-card>  
+        </ion-col> 
+      </ion-row>
+    </ion-grid>
+  
+  </div>
+
+</ion-content>
+
+<ion-footer  class="ion-no-border" >
+  <ion-toolbar>
+  
+  </ion-toolbar>
+</ion-footer>
+

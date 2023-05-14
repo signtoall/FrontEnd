@@ -1,10 +1,10 @@
 ion-content{
-    --background: rgb(238,255,166);
-    --background: linear-gradient(53deg, rgba(238,255,166,1) 48%, rgba(163,255,198,1) 78%);
-  }
+    --background: rgb(255,213,225);
+    --background: linear-gradient(65deg, rgba(255,213,225,1) 62%, rgba(163,255,225,1) 78%);
+}
   
   ion-toolbar{
-    --background: rgba(238,255,166,1) ;
+    --background: linear-gradient(65deg, rgba(255,213,225,1) 22%, rgba(163,255,225,1) 78%);
   }
 
   ion-slides {
@@ -28,13 +28,14 @@ ion-content{
 
   @media (prefers-color-scheme: dark) {
     ion-content{
-      --background: rgb(238,255,166);
-      --background: linear-gradient(53deg, rgba(238,255,166,1) 48%, rgba(163,255,198,1) 78%);
+        --background: rgb(255,213,225);
+        --background: linear-gradient(65deg, rgba(255,213,225,1) 62%, rgba(163,255,225,1) 78%);
     }
+      
+      ion-toolbar{
+        --background: linear-gradient(65deg, rgba(255,213,225,1) 22%, rgba(163,255,225,1) 78%);
+      }
     
-    ion-toolbar{
-      --background: rgba(238,255,166,1) ;
-    }
   
     ion-label{
       color: #000;

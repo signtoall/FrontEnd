@@ -16,4 +16,8 @@ export class MainViewComponent  implements OnInit {
     this.nvCtrl.navigateRoot('/', { animated: true });
   }
 
+  profile(){
+    this.nvCtrl.navigateRoot('/perfil', { animated: true })
+  }
+
 }
