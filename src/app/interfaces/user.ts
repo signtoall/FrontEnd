@@ -7,14 +7,15 @@ export interface UserAuthResponse {
   email: string;
   name: string;
   lastName: string;
+  nuip: number;
   token: string;
 }
 
-export interface UserRegisterRequest extends User {
+export interface UserRegisterRequest extends UserDto {
   password: string;
 }
 
-export interface User {
+export interface UserDto {
   name:     string;
   lastName: string;
   nuip:     number;

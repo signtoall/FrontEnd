@@ -2,6 +2,7 @@
   <div class="fullheight xc">
       <div class="vcs">
         <ion-img src="assets/images/Registro.png"> </ion-img>
+        
           <form  [formGroup]="form" style="margin-top: 1rem;">
       
             <ion-item>
@@ -9,27 +10,45 @@
           </ion-item>
 
           <ion-item>
-            <ion-input   formControlName="username" type="text"  placeholder="Apellido"></ion-input>
+            <ion-input   formControlName="lastname" type="text"  placeholder="Apellido"></ion-input>
           </ion-item>
 
           <ion-item>
-            <ion-input   formControlName="username" type="text"  placeholder="Documento"></ion-input>
+            <ion-input   formControlName="nuip" type="text"  placeholder="Documento"></ion-input>
           </ion-item>
 
           <ion-item>
-            <ion-select aria-label="fruit" placeholder="Género">
-              <ion-select-option value="apples">Femenino</ion-select-option>
-              <ion-select-option value="oranges">Masculino</ion-select-option>
+            <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+          <ion-modal [keepContentsMounted]="true">
+            <ng-template>
+              <ion-datetime 
+                id="datetime"
+                formControlName="birthDay" 
+                value="2005-01-31T00:00:00"
+                presentation="date"></ion-datetime>
+            </ng-template>
+          </ion-modal>
+          </ion-item>
+
+          <ion-item>
+            <ion-select formControlName="gender" aria-label="gender" placeholder="Género">
+              <ion-select-option value="Femenino">Femenino</ion-select-option>
+              <ion-select-option value="Masculino">Masculino</ion-select-option>
             </ion-select>
           </ion-item>
 
             <ion-item>
-                <ion-input   formControlName="username" type="text"  placeholder="Correo"></ion-input>
+                <ion-input   formControlName="email" type="text"  placeholder="Correo"></ion-input>
             </ion-item>
 
             <ion-item>
               <ion-input   formControlName="password" type="password"  placeholder="Contraseña"></ion-input>
-          </ion-item>
+            </ion-item>
+
+            <ion-item>
+              <ion-input   formControlName="passwordConfirm" type="password"  placeholder="Confirmar Contraseña"></ion-input>
+            </ion-item>
             
             <ion-button expand="block" shape="round" [disabled]="!form.valid" (click)="signup()">
               <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
