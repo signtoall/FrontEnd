@@ -34,7 +34,7 @@ export class LoginComponent  implements OnInit {
     .subscribe({
       next: async (response:UserAuthResponse) => {
         if (response){
-          //Storage.set({key: "ACCESS_TOKEN_KEY", value: response.token});
+          localStorage.setItem('token', response.token);
           this.nvCtrl.navigateRoot('/main-view', { animated: true });
         }
       },
