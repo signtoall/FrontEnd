@@ -23,7 +23,7 @@
 
     <div id="myDiv">
       <div *ngFor="let act of activities">
-        <ion-item [routerLink]="['/activities'+ act.url]" class="cardSession">
+        <ion-item [routerLink]="['/activities'+ act.url + '/' + act._id]" class="cardSession">
               <ion-item class="itemImg" >
                 <ion-img class="img" [src]="act.image"></ion-img>
               </ion-item>

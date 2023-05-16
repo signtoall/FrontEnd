@@ -9,7 +9,7 @@ const routes: Routes = [
     component: ViewActivitiesComponent
   },
   {
-    path: 'memory',
+    path: 'memory/:idActivity',
     component: MemoryGameComponent
   }
 ];

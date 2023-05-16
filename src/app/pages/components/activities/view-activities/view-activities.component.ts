@@ -32,14 +32,8 @@ export class ViewActivitiesComponent  implements OnInit {
           await alert.present();
         }
       });
-      
     } catch (error) {
-      const alert = this.alertController.create({
-        header: 'Error',
-        message: `Error: ${error.message}`,
-        buttons: ['Ok'],
-      });
-      (await alert).present();
+      console.log(error.message);
     }
   }
 

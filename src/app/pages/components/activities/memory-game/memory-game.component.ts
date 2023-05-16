@@ -1,5 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
+import { AlertController, NavController, ToastController } from '@ionic/angular';
+import { addActivityByUserRequest, addActivityByUserResponse } from 'src/app/interfaces/activities';
 import { ActivitiesService } from 'src/app/services/activities.service';
 
 @Component({
@@ -34,7 +37,8 @@ export class MemoryGameComponent  implements OnInit {
   public selectCard2val = -1;	// Valor de la tarjeta seleccionada #2
   public selectOldPosix = -1; //Almacenar posición anterior
 
-  constructor(private activitiesService: ActivitiesService, private toastController: ToastController) { }
+  constructor(private activitiesService: ActivitiesService, private toastController: ToastController,
+    private alertController: AlertController, private route: ActivatedRoute, private nvCtrl: NavController,) { }
 
   ngOnInit() {
   	this.restartGame();
@@ -165,13 +169,39 @@ export class MemoryGameComponent  implements OnInit {
   }
 
   //condicion de ganar
-  winCon(){
+  async winCon(){
     var winCheck = false;
     for(var i = 0; i< this.cardsArray.length; i++)
       if(this.cardsArray[i].val != -1) winCheck = true;
     if(winCheck == false) {
       //console.log(this.countTime) ENVIAR ESTO AL DOC
-      this.gameState = 'Ganaste'
+      let activityByUser: addActivityByUserRequest = {
+        idActivity: this.route.snapshot.paramMap.get('idActivity'),
+        timeDone: this.countTime
+      };
+      this.activitiesService.postActivityByUser(activityByUser).subscribe({
+        next: async (activitiesByUserDb: addActivityByUserResponse) => {
+          if (activitiesByUserDb)
+            this.nvCtrl.navigateRoot('/main-view', { animated: true });
+          else{
+            const alert = await this.alertController.create({
+              header: 'Error',
+              message: `Algo ha salido mal al guardar los cambios: ${activitiesByUserDb}`,
+              buttons: ['Ok'],
+            });
+            await alert.present();
+          }
+        },
+        error: async (err: HttpErrorResponse) => {
+          const alert = await this.alertController.create({
+            header: 'Error',
+            message: `${err.statusText}: ${err.message}`,
+            buttons: ['Ok'],
+          });
+          await alert.present();
+        }
+      });
+      this.gameState = 'Ganaste';
     }
   }
 

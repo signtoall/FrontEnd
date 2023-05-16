@@ -63,6 +63,7 @@ export class SignUpComponent  implements OnInit {
           buttons: ['Ok'],
         });
         await alert.present();
+        this.nvCtrl.navigateRoot('/', { animated: true });
       },
       error: async (err: HttpErrorResponse) => {
         const alert = await this.alertController.create({
