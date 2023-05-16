@@ -17,11 +17,11 @@ export class ActivitiesService {
       .then(data => data);
   }
 
-  getActivities() {
-    return this.http.get<any>('assets/jsons/activities.json').toPromise()
-      .then(res => res.data as activity[])
-      .then(data => data);
-  }
+  // getActivities() {
+  //   return this.http.get<any>('assets/jsons/activities.json').toPromise()
+  //     .then(res => res.data as activity[])
+  //     .then(data => data);
+  // }
 
   postActivityByUser (activity: addActivityByUserRequest) : Observable<addActivityByUserResponse> {
     return this.http.post<addActivityByUserResponse>(`${ this._url }activity-by-user/add`, activity);
@@ -31,7 +31,7 @@ export class ActivitiesService {
     return this.http.get<addActivityByUserResponse[]>(`${ this._url }activity-by-user/get`);
   }
 
-  // getActivities(): Observable<activity[]>{
-  //   return this.http.get<activity[]>(`${ this._url }activities/getActivities`);
-  // }
+  getActivities(): Observable<activity[]>{
+    return this.http.get<activity[]>(`${ this._url }activities/getActivities`);
+  }
 }

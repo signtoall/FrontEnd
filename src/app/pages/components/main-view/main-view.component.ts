@@ -13,6 +13,7 @@ export class MainViewComponent  implements OnInit {
   ngOnInit() {}
 
   logout(){
+    localStorage.removeItem('token');
     this.nvCtrl.navigateRoot('/', { animated: true });
   }
 

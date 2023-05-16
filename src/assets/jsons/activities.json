@@ -4,8 +4,6 @@
 			"id": "1",
 			"name": "Memoria",
 			"image": "assets/juegos/memory.png",
-			"status": false,
-			"rating": 0,
 			"url": "/memory"
 		}
 	]
