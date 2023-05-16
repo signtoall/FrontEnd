@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { activity, activityByUser, addActivityByUserResponse } from 'src/app/interfaces/activities';
 import { ActivitiesService } from 'src/app/services/activities.service';
+import { LoadingControllerService } from 'src/app/services/loading-controller.service';
 
 @Component({
   selector: 'app-view-activities',
@@ -14,16 +15,20 @@ export class ViewActivitiesComponent  implements OnInit {
   activities:activityByUser[] = [];
   activitiesByUser: addActivityByUserResponse[] = [];
 
-  constructor(private activitiesService: ActivitiesService, private alertController: AlertController,) { }
+  constructor(private activitiesService: ActivitiesService, private alertController: AlertController,
+    private loading: LoadingControllerService) { }
 
   async ngOnInit() {
+    this.loading.present();
     try {
       this.activitiesService.getActivityByUser().subscribe({
         next: async (activitiesByUserDb: addActivityByUserResponse[]) => {
+          this.loading.dismiss(); 
           this.activitiesByUser = [...activitiesByUserDb];
           this.setActivities();
         },
         error: async (err: HttpErrorResponse) => {
+          this.loading.dismiss(); 
           const alert = await this.alertController.create({
             header: 'Error',
             message: `${err.statusText}: ${err.message}`,

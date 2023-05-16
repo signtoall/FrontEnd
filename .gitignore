@@ -23,6 +23,9 @@ log.txt
 /www
 /platforms
 /plugins
+/android
+/resources/android/icon
+/resources/android/splash
 
 # Compiled output
 /dist
