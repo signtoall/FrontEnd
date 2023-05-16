@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'com.signtoall.app',
   appName: 'signtoallApp',
   webDir: 'www',
   bundledWebRuntime: false
