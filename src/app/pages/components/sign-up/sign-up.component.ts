@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavController, AlertController } from '@ionic/angular';
 import { UserDto, UserRegisterRequest } from 'src/app/interfaces/user';
 import { AuthService } from 'src/app/services/auth.service';
+import { LoadingControllerService } from 'src/app/services/loading-controller.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -24,7 +25,7 @@ export class SignUpComponent  implements OnInit {
   });
   
   constructor(private nvCtrl: NavController, private formBuilder: FormBuilder, private alertController: AlertController,
-    private readonly authService:AuthService) { }
+    private readonly authService:AuthService, private loading: LoadingControllerService) { }
 
   ngOnInit() {}
 
@@ -53,10 +54,12 @@ export class SignUpComponent  implements OnInit {
       password: this.form.controls['password'].value
     };
 
+    this.loading.present();
     // Register User
     this.authService.postRegister(userRegister)
     .subscribe({
       next: async (response: UserDto) => {
+        this.loading.dismiss(); 
         const alert = await this.alertController.create({
           header: '¡Felicitaciones!',
           message: `Bienvenido ${response.name}, su cuenta ha sido creada.`,
@@ -66,6 +69,7 @@ export class SignUpComponent  implements OnInit {
         this.nvCtrl.navigateRoot('/', { animated: true });
       },
       error: async (err: HttpErrorResponse) => {
+        this.loading.dismiss(); 
         const alert = await this.alertController.create({
           header: 'Error',
           message: `${err.statusText}: ${err.message}`,

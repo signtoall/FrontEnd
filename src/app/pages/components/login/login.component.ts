@@ -5,6 +5,7 @@ import { Plugins } from '@capacitor/core';
 import { AlertController, NavController } from '@ionic/angular';
 import { UserAuthRequest, UserAuthResponse } from 'src/app/interfaces/user';
 import { AuthService } from 'src/app/services/auth.service';
+import { LoadingControllerService } from 'src/app/services/loading-controller.service';
 const { Storage } = Plugins;
 
 @Component({
@@ -20,7 +21,7 @@ export class LoginComponent  implements OnInit {
   });
   
   constructor(private nvCtrl: NavController, private formBuilder: FormBuilder, private alertController: AlertController,
-    private readonly authService: AuthService) { }
+    private readonly authService: AuthService, private loading: LoadingControllerService) { }
 
   ngOnInit() {}
 
@@ -30,15 +31,18 @@ export class LoginComponent  implements OnInit {
       email: this.form.controls['email'].value,
       password: this.form.controls['password'].value
     }
+    this.loading.present();
     this.authService.postAuthentication(auth)
     .subscribe({
       next: async (response:UserAuthResponse) => {
         if (response){
+          this.loading.dismiss(); 
           localStorage.setItem('token', response.token);
           this.nvCtrl.navigateRoot('/main-view', { animated: true });
         }
       },
       error: async (err: HttpErrorResponse) => {
+        this.loading.dismiss(); 
         const alert = await this.alertController.create({
           header: 'Error',
           message: `${err.statusText}: ${err.message}`,
