@@ -28,16 +28,18 @@
                 <ion-img class="img" [src]="act.image"></ion-img>
               </ion-item>
               <ion-label >
-                <h2> <strong> &nbsp; {{act.name}} </strong>  </h2> 
+                <ion-text [color]="evalueActivityState(act.isDone)">
+                  <h2> <strong> &nbsp; {{act.name}} </strong>  </h2> 
+                </ion-text>
                 <h3> &nbsp; <ion-icon name="rocket"></ion-icon> {{act.description}}</h3>
-                <p class="pSinDeuda" > &nbsp; <ion-icon name="footsteps"></ion-icon> Juega</p>
+                <p class="pTime">&nbsp; <ion-icon name="hourglass-outline"></ion-icon> Tiempo: {{act.timeDone}}</p>
+                <p class="pPlay" > &nbsp; <ion-icon name="footsteps"></ion-icon> Juega</p>
               </ion-label>
               <ion-button expand="block" fill="clear" shape="round" >
                 <ion-icon  name="arrow-forward-outline" color="#000"></ion-icon>
               </ion-button>
         </ion-item>
       </div>
-
 
     </div>
     

@@ -6,6 +6,11 @@ export interface activity{
     url:         string;
 }
 
+export interface activityByUser extends activity {
+    timeDone:   number;
+    isDone:     boolean;
+}
+
 export interface alphabet{
     id?: number;
     Letra?: string;
