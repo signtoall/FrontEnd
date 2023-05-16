@@ -18,7 +18,7 @@ export interface UserRegisterRequest extends UserDto {
 export interface UserDto {
   name:     string;
   lastName: string;
-  nuip:     number;
+  nuip:     string;
   birthDay: Date;
   gender:   string;
   email:    string;

@@ -25,27 +25,27 @@
             <ion-card-content>
               <ion-list [inset]="true">
                 <ion-item>
-                  <ion-label color="primary">Nombre:<br><ion-label style="color: #000;">P</ion-label></ion-label>          
+                  <ion-label color="primary">Nombre:<br><ion-label style="color: #000;">{{perfilUser.name}}</ion-label></ion-label>          
                   <ion-icon name="person" color="success"></ion-icon>
                 </ion-item>
                 <ion-item>
-                  <ion-label color="primary">Apellido:<br><ion-label style="color: #000;">P</ion-label></ion-label>
+                  <ion-label color="primary">Apellido:<br><ion-label style="color: #000;">{{perfilUser.lastName}}</ion-label></ion-label>
                   <ion-icon name="person" color="success"></ion-icon>
                 </ion-item>
                 <ion-item>
-                  <ion-label color="primary">Género:<br><ion-label style="color: #000;">F</ion-label></ion-label>     
+                  <ion-label color="primary">Género:<br><ion-label style="color: #000;">{{perfilUser.gender}}</ion-label></ion-label>     
                   <ion-icon name="sparkles" color="primary"></ion-icon>
                 </ion-item>
                 <ion-item>
-                  <ion-label color="primary">Fecha de nacimiento:<br><ion-label style="color: #000;">0</ion-label></ion-label>
+                  <ion-label color="primary">Fecha de nacimiento:<br><ion-label style="color: #000;">{{perfilUser.birthDay | date:'longDate'}}</ion-label></ion-label>
                   <ion-icon name="card" color="tertiary"></ion-icon>
                 </ion-item>   
                 <ion-item>
-                  <ion-label color="primary">Documento:<br><ion-label style="color: #000;">0</ion-label></ion-label>
+                  <ion-label color="primary">Documento:<br><ion-label style="color: #000;">{{perfilUser.nuip}}</ion-label></ion-label>
                   <ion-icon name="card" color="tertiary"></ion-icon>
                 </ion-item>                                           
                 <ion-item>
-                  <ion-label color="primary">Correo:<br><ion-label style="color: #000;">@</ion-label></ion-label>     
+                  <ion-label color="primary">Correo:<br><ion-label style="color: #000;">{{perfilUser.email}}</ion-label></ion-label>     
                   <ion-icon name="mail-unread" color="warning"></ion-icon>
                 </ion-item>             
               </ion-list>
