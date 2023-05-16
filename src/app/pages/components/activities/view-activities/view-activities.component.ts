@@ -31,7 +31,7 @@ export class ViewActivitiesComponent  implements OnInit {
           this.loading.dismiss(); 
           const alert = await this.alertController.create({
             header: 'Error',
-            message: `${err.statusText}: ${err.message}`,
+            message: `${err?.error?.message ?? 'Mensaje no disponible.'}`,
             buttons: ['Ok'],
           });
           await alert.present();
@@ -61,7 +61,7 @@ export class ViewActivitiesComponent  implements OnInit {
       error: async (err: HttpErrorResponse) => {
         const alert = await this.alertController.create({
           header: 'Error',
-          message: `${err.statusText}: ${err.message}`,
+          message: `${err?.error?.message ?? 'Mensaje no disponible.'}`,
           buttons: ['Ok'],
         });
         await alert.present();

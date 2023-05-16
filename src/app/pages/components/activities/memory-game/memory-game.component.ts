@@ -195,7 +195,7 @@ export class MemoryGameComponent  implements OnInit {
         error: async (err: HttpErrorResponse) => {
           const alert = await this.alertController.create({
             header: 'Error',
-            message: `${err.statusText}: ${err.message}`,
+            message: `${err?.error?.message ?? 'Algo ha salido mal al guardar los cambios'}`,
             buttons: ['Ok'],
           });
           await alert.present();

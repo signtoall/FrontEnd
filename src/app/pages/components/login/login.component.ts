@@ -42,10 +42,10 @@ export class LoginComponent  implements OnInit {
         }
       },
       error: async (err: HttpErrorResponse) => {
-        this.loading.dismiss(); 
+        this.loading.dismiss();
         const alert = await this.alertController.create({
           header: 'Error',
-          message: `${err.statusText}: ${err.message}`,
+          message: `${err?.error?.message ?? 'Mensaje no disponible.'}`,
           buttons: ['Ok'],
         });
         await alert.present();
